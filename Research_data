@@ -1,0 +1,220 @@
+Appendix A 
+
+Table ##. Cloaked Honeypot Modified Commands 
+
+Project Phase 
+	
+
+Path 
+	
+
+Changed 
+
+Phase 2 
+	
+
+~/cowrie/src/cowrie/commands/ls.py 
+	
+
+Changed the get_dir_files method to include single quote marks around path on error and full path for normal return 
+
+Phase 2 
+	
+
+~/cowrie/share/cowrie/txtcmds/usr/bin/lscpu 
+	
+
+Changed the text to be the same as a sample ubuntu 18.04 machine, Specifically Added in Model name section with output from cpu model name, also added vulnerability sections and flags for the cpu 
+
+Phase 2 
+	
+
+~/cowrie/src/cowrie/shell/honeypot.py 
+	
+
+Modified runCommand  method to add code to change text output for commands that start with forward slash so that it says no such file or directory rather than no command found 
+
+Phase 2 
+	
+
+~/cowrie/src/cowrie/shell/fs.py 
+	
+
+Added code to change the output when the /proc/uptime file is requested, def file_contents 
+
+Phase 2 
+	
+
+~/cowrie/src/cowrie/commands/ping.py 
+	
+
+Modified the start() method to set the self.ip to none when the ip is not valid 
+
+Phase 2 
+	
+
+~/cowrie/share/cowrie/txtcmds/usr/bin/top 
+	
+
+Changed the text to a different value 
+
+Phase 2 
+	
+
+~/cowrie/honeyfs/etc/hostname 
+	
+
+Changed to be different from stock 
+
+Phase 2 
+	
+
+~/cowrie/honeyfs/etc/host.conf 
+	
+
+Changed to be different from stock 
+
+Phase 2 
+	
+
+~/cowrie/honeyfs/etc/hosts 
+	
+
+Changed to be more similar to ubuntu 
+
+Phase 2 
+	
+
+~/cowrie/honeyfs/proc/modules 
+	
+
+Changed to be more similar to ubuntu 
+
+Phase 2 
+	
+
+~/cowrie/honeyfs/proc/version 
+	
+
+Changed to be more similar to ubuntu 
+
+Phase 2 
+	
+
+~/cowrie/honeyfs/proc/cpuinfo 
+	
+
+Changed to be more similar to stock ubuntu 
+
+Phase 2 
+	
+
+~/cowrie/honeyfs/proc/modules 
+	
+
+Changed to be more similar to aws ubuntu machine 
+
+Phase 2 
+	
+
+~/cowrie/honeyfs/proc/mounts 
+	
+
+Changed to be more similar to aws ubuntu machine 
+
+Phase 2 
+	
+
+~/cowrie/src/cowrie/shell/honeypot.py 
+	
+
+Changed the lineReceived method to better control exception of command not found in nested command 
+
+Phase 2 
+	
+
+~/cowrie/src/cowrie/output/localsyslog.py 
+	
+
+Changed the write method  to check for system key in the log entry, because of error in wget and curl commands 
+
+Phase 2 
+	
+
+~/cowrie/src/cowrie/commands/base.py 
+	
+
+Changed the command_sh method to have a try except block around the cmdstack.pop function 
+
+Phase 3 
+	
+
+~/cowrie/src/cowrie/commands/base.py 
+	
+
+Changed the command_passwd method to print out similar strings to stock ubuntu, also controlled for fingerprinting where bash is run after the passwd command 
+
+Phase 3 
+	
+
+~/cowrie/src/cowrie/commands/cat.py 
+	
+
+Changed the output method to print more similar strings to stock ubuntu when numbers option is selected. Also added control when taking cat of line with non printable characters to be more similar to stock ubuntu 
+
+Phase 3 
+	
+
+~/cowrie/src/cowrie/commands/uname.py 
+	
+
+Added machine method and processor method to allow for separation of the flags 
+
+ 
+ 
+
+Also added [shell]:machine, [shell]:processor to ~/cowrie/etc/cowrie.cfg.dist 
+
+Phase 3 
+	
+
+~/cowrie/src/cowrie/commands/free.py 
+	
+
+Modified the get free status to pull from the cowrie/honeyfs/proc/meminfo for details  
+
+Phase 3 
+	
+
+~/cowrie/src/cowrie/commands/curl.py 
+	
+
+Modified the help text to be similar to stock ubuntu. Changed the arguments to expect to allow for dns-servers —-- 
+
+Phase 3 
+	
+
+~/cowrie/src/cowrie/commands/base.py 
+	
+
+Modified the Command_exit method to print out to terminal logout when the exit command is run 
+
+Phase 3 
+
+ 
+	
+
+~/cowrie/src/cowrie/commands/base.py 
+	
+
+Modified the Command_ps method to print out more similar text to stock ubuntu when called with -x argument 
+
+Phase 3 
+	
+
+~/cowrie/src/cowrie/commands/which.py 
+	
+
+Modified the Command_which method to print out /usr/bin/ls when called on ls rather than /bin/ls, in order to be more similar to ubuntu 
+
+ 
