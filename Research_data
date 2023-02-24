@@ -2,6 +2,8 @@ Appendix A
 
 Table ##. Cloaked Honeypot Modified Commands 
 
+
+
 | Project Phase | Path | Changed |
 | ------------- | ------------- | ------------- |
 | Phase 2 | ~/cowrie/src/cowrie/commands/ls.py | Changed the get_dir_files method to include single quote marks around path on error and full path for normal return |
