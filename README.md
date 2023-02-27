@@ -8,8 +8,8 @@ This data was collected through undergraudate research conducted at Purdue Unive
 
 ## Appendix B
 
-..*Table I: contains commands that exist on the file system in /bin but are not executable 
-.*Table II: contains commands that exist on the filesystem in /usr/sbin but are not executable. 
+* Table I: contains commands that exist on the file system in /bin but are not executable 
+* Table II: contains commands that exist on the filesystem in /usr/sbin but are not executable. 
 *Table III: contains commands that exist on the filesystem in /usr/bin but are not executable. 
 *Table IV: contains command that exist on the filesystem in /sbin but are not executable. 
 
