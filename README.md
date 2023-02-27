@@ -5,6 +5,7 @@ This data was collected through undergraudate research conducted at Purdue Unive
 
 ## Appendix A
 
+This table shows the modifications that were made to the cowrie honeypot throughout the research, and identifies what was changed during which phases. 
 
 ## Appendix B
 
